@@ -16,7 +16,7 @@
                 //  alert(`Falta completar el campo ${v.name}`);
                 Swal.fire({
                     title: `Falta completar el campo ${v.name}`,
-                    imageUrl: "../images/pikachu-no.gif",
+                    imageUrl: "./images/pikachu-no.gif",
                     imageWidth: 200,
                     imageHeight: 200,
                     imageAlt: "A tall image",
@@ -34,7 +34,7 @@
             if (v.name === 'Email' && !(reg.test(v.value))) {
                 Swal.fire({
                     title: `Valida tu email que tiene un formato incorrecto`,
-                    imageUrl: "../images/pikachu-no.gif",
+                    imageUrl: "./images/pikachu-no.gif",
                     imageWidth: 200,
                     imageHeight: 200,
                     imageAlt: "A tall image",
@@ -74,8 +74,8 @@
             if (email===email_r&& password===password_r)
                 {
                     Swal.fire({
-                        title: "Bienvenido Presiona Jugar",
-                        imageUrl: "../images/pikachu-pokemon-pas.gif",
+                        title: "Bienvenido Presiona el link para Jugar",
+                        imageUrl: "./images/pikachu-pokemon-pas.gif",
                         imageWidth: 400,
                         imageHeight: 200,
                         imageAlt: "A tall image",
@@ -89,7 +89,7 @@
             {
                 Swal.fire({
                     title: `Email O Password Incorrecto`,
-                    imageUrl: "../images/pikachu-no.gif",
+                    imageUrl: "./images/pikachu-no.gif",
                     imageWidth: 200,
                     imageHeight: 200,
                     imageAlt: "A tall image",

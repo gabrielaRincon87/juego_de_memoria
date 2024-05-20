@@ -36,7 +36,7 @@ function validateForm() {
       //  alert(`Falta completar el campo ${v.name}`);
       Swal.fire({
         title: `Falta completar el campo ${v.name}`,
-        imageUrl: "../images/pikachu-no.gif",
+        imageUrl: "./images/pikachu-no.gif",
         imageWidth: 200,
         imageHeight: 200,
         imageAlt: "A tall image",
@@ -49,7 +49,7 @@ function validateForm() {
     if (v.name === 'Edad' && (v.value < 3 || v.value > 120)) {
       Swal.fire({
         title: `Este juego es para personas mayores a 3 años`,
-        imageUrl: "../images/pikachu-pokemon-user.gif",
+        imageUrl: "./images/pikachu-pokemon-user.gif",
         imageWidth: 200,
         imageHeight: 200,
         imageAlt: "A tall image",
@@ -61,7 +61,7 @@ function validateForm() {
     if (v.name === 'Email' && !(reg.test(v.value))) {
       Swal.fire({
         title: `Valida tu email que tiene un formato incorrecto`,
-        imageUrl: "../images/pikachu-no.gif",
+        imageUrl: "./images/pikachu-no.gif",
         imageWidth: 200,
         imageHeight: 200,
         imageAlt: "A tall image",
@@ -116,7 +116,7 @@ document.getElementById("submit").onclick = () => {
     Swal.fire({
       title:  ` ${nombre}! Tu Usuario ha sido creado`,
       text:"Vamos a Divertirnos Inicia Sesion",
-      imageUrl: "../images/pikachu-pokemon-pas.gif",
+      imageUrl: "./images/pikachu-pokemon-pas.gif",
       imageWidth: 400,
       imageHeight: 200,
       imageAlt: "A tall image",

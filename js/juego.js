@@ -32,7 +32,7 @@ function cargarCartas(array,div)
         divImg.className = "card-back";
         divImg.id = m
         const img = document.createElement("img");
-        img.src = "../images/Pokebola-back.png";
+        img.src = "./images/Pokebola-back.png";
         img.className = "img-card-back";
         divImg.appendChild(img);
         div.append(divImg);
@@ -56,7 +56,7 @@ function ganar() {
     Swal.fire({
         title:  `Ganaste ${obj.name}! Felicidades`,
         text:`Hiciste  ${score} puntos`,
-        imageUrl: "../images/pikachu-pokemon.gif",
+        imageUrl: "./images/pikachu-pokemon.gif",
         imageWidth: 400,
         imageHeight: 200,
         imageAlt: "A tall image",
@@ -160,7 +160,7 @@ score=0;
 
                             const img_carta = carta_v.querySelector('img');
 
-                            img_carta_v.src = "../images/Pokebola-back.png";
+                            img_carta_v.src = "./images/Pokebola-back.png";
                             carta_v.classList.toggle("card-back")
                             carta_v.classList.remove("card-front")
 
