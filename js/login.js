@@ -6,7 +6,8 @@
     let password_r='';
 
     function validateForm() {
-        var vals = document.querySelectorAll('input');
+        var myForm=document.getElementById('myForm');
+        var vals = myForm.querySelectorAll('input');
         var reg = /^\w+([.-_+]?\w+)*@\w+([.-]?\w+)*(\.\w{2,10})+$/;
 
 

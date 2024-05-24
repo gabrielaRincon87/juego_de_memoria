@@ -5,28 +5,42 @@ let edad = 0;
 let pais = '';
 let email = '';
 let pass = ''
-
+var paises= []
 
 document.addEventListener("DOMContentLoaded", (event) => {
   console.log("DOM fully loaded and parsed");
   var select = document.querySelector("#nacionalidad-select");
-  var i = 1;
+  var i = 0;
   fetch(urlApi).then(r => r.json()).then(result => {
-    console.log(result);
+    
+    console.log(paises);
     for (var pais of result) {
-      console.log(pais.name.common)
-      var option = document.createElement("option");
-      option.text = pais.name.common;
-      option.value = i;
-      select.appendChild(option);
+      paises[i]=pais.name.common;
       i++;
     }
+    
+  paises.sort();
+  console.log(paises)
+  for (let j=0; j<paises.length;j++)
+    {
+      
+
+     var option = document.createElement("option");
+      option.text = paises[j];
+      option.value = j;
+      select.appendChild(option);
+    }
   })
+
+  
+
+
+
 });
 
 function validateForm() {
- 
-  var vals = document.querySelectorAll('input, select');
+ var myForm=document.getElementById('myForm');
+  var vals = myForm.querySelectorAll('input, select');
   var reg = /^\w+([.-_+]?\w+)*@\w+([.-]?\w+)*(\.\w{2,10})+$/;
 
 
