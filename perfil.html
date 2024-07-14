@@ -4,16 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PoKe-MeM</title>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@7.26.10/dist/sweetalert2.all.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="icon" href="./images/icons8-pikachu-pokemon-48.png" type="image/x-icon">
     <link  rel="stylesheet" href="./style/style.css"> 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://kit.fontawesome.com/cac8e89f4d.js" crossorigin="anonymous"></script>
 
-    
-
-   
 </head>
 <body>
   
@@ -42,6 +39,8 @@
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" href="editarUsuario.html" >Edita tus datos!</a>
+                 
+                  
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" href="perfil.html" >Perfil</a>
@@ -58,35 +57,55 @@
           </nav>
     </heaader>
         <main>
-            <div class="contenidoJuego">
-            <section class="seccionJuego" >
+            <div class="contenidologin">
+            <section class="seccionPpal" >
+                <section class = "seccion-form">
+                <div id="myForm" class="row g-12">
+                    <h3 >Bienvenido</h5>
+                <br>
+                <div class="card" style="width: 20rem;">
+                  <img class="card-img-top" style="width: 10rem; align-self: center;" id= "avatar" src="..." alt="Card image cap">
+                  <div class="card-body">
+                    <h5 class="card-title" id="name"></h5>
+                         </div>
+                  <div class="card-body">
+                    <div >
+                      <label for="fecha" class="form-label">Jugaste por ultima vez:</label>
+                    
+                      <input type="fecha"   name='fecha' class="form-control" id="fecha" value="" readonly>
+                  </div>
+                        <div  >
+                            <label for="puntaje" class="form-label">Tu Mayor Puntaje es:</label>
+                          
+                            <input type="puntaje"  name='puntaje' class="form-control" id="puntaje"  value="0" readonly>
+                             </div>
+                        <div   >
+                            <label for="acumulado" class="form-label">Tu Puntaje Acumulado:</label>
+                          
+                            <input type="acumulado"   name='acumulado' class="form-control" id="acumulado" value="0" readonly>
+                        </div>
+    
+                     <br>
+                     <div  >
+                        <a href="jugar.html" id="submit" class="btn btn-info btn-login">Jugar </a>
+                        <a href="editarUsuario.html" id="submit" class="btn btn-info btn-login">Editar mis Datos </a>
                  
-                  <div id="opciones" class="seccion-dificultad">
-                    <label for="dificultad"> Elige la dificultad:</label>
-                        <select  name="dificultad" id="dificultad">
-                            <option value="1">Seleccione una opción</option>
-                        <option value="4">Super Fácil</option>
-                        <option value="8">Fácil</option>
-                        <option value="12">Normal</option>
-                        <option value="16">Dificil</option>
-                        <option value="20">Super Dificil</option>                  
-                       </select>
-
-                    </div>
-                    <div id="divScore" class="seccion-score">
-<span class="score" id="score"> Score: 0</span>
-                    </div>
-                    <div id ="tablero" class="seccion-tablero"></div>
+                      </div>
+                </div>
+                  </div>
+                </div>
+               
                 </section>
-
+                </section>
             </div>
+
+          
+
         </main>
  
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        AOS.init();
-      </script>
-    <script src="./js/juego.js" type="text/javascript"></script>
+      <script src="sweetalert2.all.min.js"></script>
+    <script src="./js/perfil.js" type="text/javascript"></script>
 
 </body>
 
