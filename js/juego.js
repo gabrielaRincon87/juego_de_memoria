@@ -1,10 +1,17 @@
 const urlApi = "https://pokeapi.co/api/v2/pokemon/id";
+const urlPuntajeApi = "http://localhost:8080/pokemem_back/puntaje";
 let pokemones = [];
 let cartas = [];
 let cant_front = 0;
 let poke_1 = '';
 let poke_2 = '';
 let score=0;
+
+const tiempoTranscurrido = Date.now();
+const hoy = new Date(tiempoTranscurrido);
+
+
+let puntaje= {id_usuario:0, puntaje:0, fecha: ""}
 
 function shuffle(array) {
     var currentIndex = array.length, temporaryValue, randomIndex;
@@ -51,10 +58,26 @@ function ganar() {
         var usuario = localStorage.getItem('usuario');
         console.log(usuario);
         if (usuario) {
-            console.log('entre al if')
+            
             var obj = JSON.parse(usuario);
+        puntaje={id_usuario: obj.id_usuario,
+            fecha:hoy.toLocaleDateString(),
+            puntaje: score
+          
+        }
+        console.log(puntaje)
+    }
+        const response = fetch(urlPuntajeApi, {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(puntaje),
+          })
+            .then(response => {
+    
     Swal.fire({
-        title:  `Ganaste ${obj.name}! Felicidades`,
+        title:  `Ganaste ${obj.nombre}! Felicidades`,
         text:`Hiciste  ${score} puntos`,
         imageUrl: "./images/pikachu-pokemon.gif",
         imageWidth: 400,
@@ -64,7 +87,20 @@ function ganar() {
         footer: '<a href="./jugar.html">Quieres jugar de Nuevo?</a>'
 
       });
-     }
+            })
+            .catch(error => {
+    
+              Swal.fire({
+                icon: "error",
+                title: "Oops...",
+                text: "Hubo problemas al tratar de guardar el puntaje"
+              });
+    
+            });
+
+        
+      
+     
     }
 }
 
